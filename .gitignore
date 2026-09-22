@@ -8,3 +8,7 @@ wheels/
 
 # Secrets
 .env
+
+# DVC
+.dvc/cache/
+/dvc/tmp/

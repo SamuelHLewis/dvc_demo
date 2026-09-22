@@ -1,0 +1,30 @@
+stages:
+  generate_responses:
+    cmd: uv run python evals/generate_responses.py
+    deps:
+      - app.py
+      - evals/generate_responses.py
+      - prompts/system_prompt.md
+      - pyproject.toml
+      - topics.txt
+      - uv.lock
+    params:
+      - params.yaml:
+          - app_model
+    outs:
+      - evals/results.jsonl
+
+  evaluate_responses:
+    cmd: uv run python evals/evaluate_responses.py
+    deps:
+      - app.py
+      - evals/evaluate_responses.py
+      - evals/results.jsonl
+      - prompts/judge_prompt.md
+      - pyproject.toml
+      - uv.lock
+    params:
+      - params.yaml:
+          - judge_model
+    outs:
+      - evals/evaluation_results.jsonl
