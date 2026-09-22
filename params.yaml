@@ -1,0 +1,4 @@
+# the values for all variables used at each stage of the pipeline
+
+app_model: gpt-5.4-mini-sweden
+judge_model: gpt-5.4-mini-sweden

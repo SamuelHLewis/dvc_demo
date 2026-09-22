@@ -1,0 +1,1 @@
+Write a limerick about the topic proposed by the user.
